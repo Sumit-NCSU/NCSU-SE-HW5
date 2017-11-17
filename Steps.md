@@ -91,7 +91,7 @@ Check that the forever server is running properly:
 
 > Open Chrome and go to `192.168.33.11:3001` The result should be:
 
-![alt text][media/screen.PNGoutput]
+![output][media/screen.png]
 
 To stop the running forver server, run the stopforever.yml playbook:
 
