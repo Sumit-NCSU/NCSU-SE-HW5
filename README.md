@@ -32,8 +32,8 @@ If we do not use CM tools, then a lot can go wrong for example, we won't have an
 
 A: Difference Between Continuous Integration, continuous Delivery and Continuous Deployment:
 
-**Continuous Integration** means that the software is built, tested and analyzed for all the software changes that are committed to the source control repository. This is not directly concerned with the delivery or deployment of the software, it just endures that the software builds and the tests run for each commit.
+**Continuous Integration** means that the software is built, tested and analyzed for all the software changes that are committed to the source control repository. This is not directly concerned with the delivery or deployment of the software, it just ensures that the software builds and the tests run for each commit.
 
 **Continuous Delivery** means that we ensure that all the software changes are delivery-ready and can be shipped to the customer by testing it in a production-like environment. In this, it just ensures that the software *can be* deployed on a production-like environment. The software is not actually deployed to production environment continuously with each software change.
 
-**Continuous Deployment** means that the incremental software changes are are automatically tested, vetted and deployed to the actual production environment. In a way, it includes the steps we take during continuous integration and continuous delivery by running tests and vetting the software before deploying it to production.
+**Continuous Deployment** means that the incremental software changes are are automatically tested, vetted and deployed to the actual production environment. So, it includes the steps we take during continuous integration and continuous delivery by running tests and vetting the software before deploying it to production and then finally deploys the software to production environment.
