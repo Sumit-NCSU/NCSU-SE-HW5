@@ -1,0 +1,52 @@
+---
+- hosts: all
+  gather_facts: no
+  tasks:
+  - name: Install npm, nodejs and git
+    apt:
+      name: "{{ item }}"
+    state: latest
+    update_cache: yes
+    with_items:
+      - npm
+      - nodejs-legacy
+      - git
+    become: yes
+
+  - name: Install forever
+    shell: npm install -g forever
+    become: yes
+
+  - name: Clone git repo https://github.com/CSC-DevOps/App
+    git:
+      repo: https://github.com/CSC-DevOps/App.git
+      dest: /home/App
+      clone: yes
+
+  - name: Install npm packages
+    shell: npm install
+    args:
+      chdir: /home/App
+    become: yes
+
+  - name: Run app forever start node main.js
+    shell: forever start main.js 3001
+    args:
+      chdir: /home/App
+    become: yes
+
+  - name: Security ensure bash, openssl, openssh-client and openssh-server are running latest version
+    apt:
+      name: "{{ item  }}"
+    state: latest
+    with_items:
+        - bash
+        - openssl
+        - openssh-client
+        - openssh-server
+    become: yes
+
+  - name: Cleanup remove content in /tmp/*
+    file: path=/tmp/*
+      state=absent
+    become: yes
