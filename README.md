@@ -6,9 +6,12 @@ CSC510 Software Engineering HW5
 
 The Steps to set up the project can be found here: [Steps.md](Steps.md)
 
-## PlayBook
+## Ansible Playbook Files
 
 The playbook script to execute the setup and tasks on the Client Virtual Machine is present here: [ansible/data/playbook.yml](ansible/data/playbook.yml)
+
+The other ansible files such as inventory and keys can be found here: [ansible/data](ansible/data).
+For security reasons, the contents of the key file is committed.
 
 ## Screencast
 
